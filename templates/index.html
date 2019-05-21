@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Currency Converter</title>
+        <meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
+	<link rel="shortcut icon" type="image/png" href="/static/favicon.png"/>
+        <link href="/static/skeleton.css" rel="stylesheet">
+        <link href="/static/normalize.css" rel="stylesheet">
+        <style>
+            body {
+                background-color: antiquewhite;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <h1>Currency Converter</h1>
+            <br>
+            <br>
+            <form method="GET,POST" action="/">
+                <select name="base_currency">
+                    <option value="{{base_currency}}" selected="selected">{{base_currency}}</option>
+                    <option value="{{currencies[0]}}">{{currencies[0]}}</option>
+                    {% for currency in currencies[1:] %}
+                    <option value="{{currency}}">{{currency}}</option>
+                    {% endfor %}
+                </select>
+                <input type="text" name="value" value="{{value}}">
+                <h2>=</h2>
+                <select name="output_currency">
+                    <option value="{{output_currency}}" selected="selected">{{output_currency}}</option>
+                    <option value="{{currencies[0]}}">{{currencies[0]}}</option>
+                    {% for currency in currencies[1:] %}
+                    <option value="{{currency}}">{{currency}}</option>
+                    {% endfor %}
+                </select>
+                <input type="text" value ="{{end}}" READONLY/>
+                <br><br>
+                <input class="button-primary" type="submit" value="Convert">
+            </form>
+        </center>
+    </body>
+</html>
