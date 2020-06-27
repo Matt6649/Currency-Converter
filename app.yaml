@@ -1,8 +1,4 @@
 runtime: python37
 
-handlers:
 - url: /
-  secure: always
-  
-- url: /(.*)
   secure: always
